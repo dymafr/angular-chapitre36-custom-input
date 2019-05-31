@@ -26,8 +26,8 @@ export class InputAddressComponent implements OnInit, AfterViewInit, ControlValu
     lng: 0.00
   };
 
-  @ViewChild('ref') public el: ElementRef;
-  @ViewChild('map') public mapEl: ElementRef;
+  @ViewChild('ref', { static: true }) public el: ElementRef;
+  @ViewChild('map', { static: true }) public mapEl: ElementRef;
 
   constructor() { }
 
