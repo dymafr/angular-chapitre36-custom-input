@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, forwardRef } from '@angular/core';
 import places from 'places.js';
-import leaflet from 'leaflet';
+import * as leaflet from 'leaflet';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 @Component({
@@ -81,7 +81,7 @@ export class InputAddressComponent implements OnInit, AfterViewInit, ControlValu
 
 
   private addMarker() {
-    const coord = [ this.innerValue.lat, this.innerValue.lng ];
+    const coord: [number, number] = [ this.innerValue.lat, this.innerValue.lng ];
     leaflet.marker(coord).addTo(this.map);
     this.map.setView(coord, 13);
   }
